@@ -3,8 +3,6 @@
 Running with docker compose:
 
 ```yaml
-version: '4'
-
 services:
   server:
     build:
@@ -13,7 +11,7 @@ services:
     env_file:
       - .env
     ports:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
       - db
     networks:
@@ -37,10 +35,10 @@ networks:
   app:
 ```
 
-Also you need to create ```.env``` file:
+Also, you need to create ```.env``` file:
 
 ```
-URLS=http://0.0.0.0:8080
+SERVER_ADDRESS=0.0.0.0:8080
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=password
 POSTGRES_DB=db
